@@ -1,0 +1,14 @@
+.header_parent {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    .header_logo {
+        padding-left: 20px;
+    }
+
+    .header_auth {
+        padding-right: 20px;
+    }
+}

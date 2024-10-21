@@ -1,19 +1,19 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app"
-import { getAnalytics } from "firebase/analytics"
-import { getAuth } from "firebase/auth"
-import { config } from "dotenv"
+import { initializeApp } from 'firebase/app'
+import { getAnalytics } from 'firebase/analytics'
+import { getAuth } from 'firebase/auth'
+import { config } from 'dotenv'
 
 config()
 
 const firebaseConfig = {
   apiKey: process.env.FIREBASE_API_KEY,
-  authDomain: "foodandstuff-59d55.firebaseapp.com",
-  projectId: "foodandstuff-59d55",
-  storageBucket: "foodandstuff-59d55.appspot.com",
-  messagingSenderId: "1046151684387",
-  appId: "1:1046151684387:web:5dc1893a00278ee091ec96",
-  measurementId: "G-33T3HL32ZE"
+  authDomain: 'foodandstuff-59d55.firebaseapp.com',
+  projectId: 'foodandstuff-59d55',
+  storageBucket: 'foodandstuff-59d55.appspot.com',
+  messagingSenderId: '1046151684387',
+  appId: '1:1046151684387:web:5dc1893a00278ee091ec96',
+  measurementId: 'G-33T3HL32ZE'
 };
 
 const app = initializeApp(firebaseConfig)
