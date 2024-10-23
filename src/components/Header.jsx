@@ -17,21 +17,21 @@ const Header = () => {
     }
 
     return (
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-                <a class="navbar-item">
-                    <button class="button is-ghost" onClick={goToMain}>Food and Stuff</button>
+        <nav className="navbar" role="navigation" aria-label="main navigation">
+            <div className="navbar-brand">
+                <a className="navbar-item">
+                    <button className="button is-ghost" onClick={goToMain}>Food and Stuff</button>
                 </a>
             </div>
 
-            <div id="navbarBasicExample" class="navbar-menu">
-                <div class="navbar-end">
-                    <div class="navbar-item">
-                        <div class="buttons">
-                            <a class="button is-primary" onClick={goToSignup}>
+            <div id="navbarBasicExample" className="navbar-menu">
+                <div className="navbar-end">
+                    <div className="navbar-item">
+                        <div className="buttons">
+                            <a className="button is-primary" onClick={goToSignup}>
                                 <strong>Sign up</strong>
                             </a>
-                            <a class="button is-light" onClick={goToLogin}>
+                            <a className="button is-light" onClick={goToLogin}>
                                 Log in
                             </a>
                         </div>

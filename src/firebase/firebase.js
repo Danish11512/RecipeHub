@@ -1,12 +1,10 @@
 import { initializeApp } from 'firebase/app'
 import { getAnalytics } from 'firebase/analytics'
 import { getAuth } from 'firebase/auth'
-import { config } from 'dotenv'
 
-config()
 
 const firebaseConfig = {
-  apiKey: process.env.FIREBASE_API_KEY,
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: 'foodandstuff-59d55.firebaseapp.com',
   projectId: 'foodandstuff-59d55',
   storageBucket: 'foodandstuff-59d55.appspot.com',
