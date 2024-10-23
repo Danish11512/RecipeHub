@@ -1,11 +1,17 @@
 import { useQuery } from '@tanstack/react-query'
+import axios from 'axios'
 
 
 const usePublicRecipes = () => {
 
+  const queryFn = async () => {
+    const response = await axios.get(import.meta.env.VITE_PUBLIC_RECIPES_URL);
+      return response.data;
+  }
+
   return useQuery({
     queryKey: ['public-recipies'],
-    queryFn: () => fetch(import.meta.env.VITE_PUBLIC_RECIPES_URL).then((res) => res.json()),
+    queryFn,
     staleTime: 10 * 60 * 1000,
     refetchOnWindowFocus: false,
   })
