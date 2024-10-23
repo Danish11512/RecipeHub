@@ -5,8 +5,11 @@ import axios from 'axios'
 const usePublicRecipes = () => {
 
   const queryFn = async () => {
-    const response = await axios.get(import.meta.env.VITE_PUBLIC_RECIPES_URL);
-      return response.data;
+    const alphabet = "abcdefghijklmnopqrstuvwxyz"
+    const randomIndex = Math.floor(Math.random() * alphabet.length)
+
+    const response = await axios.get(import.meta.env.VITE_PUBLIC_RECIPES_URL + alphabet.charAt(randomIndex))
+    return response.data
   }
 
   return useQuery({
