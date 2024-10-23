@@ -1,8 +1,11 @@
 import { useNavigate } from "react-router-dom"
-import {memo} from 'react'
+import { memo } from 'react'
+import { useAuth } from "../context/AuthContext"
+import { doSignOut } from '../firebase/auth'
 
 const Header = () => {
     const navigate = useNavigate()
+    const { userLoggedIn } = useAuth()
 
     const goToLogin = () => {
         navigate('/login')
@@ -14,6 +17,12 @@ const Header = () => {
 
     const goToMain = () => {
         navigate('/')
+    }
+
+    const signOut = () => {
+        doSignOut()
+        navigate('/')
+
     }
 
     return (
@@ -28,12 +37,23 @@ const Header = () => {
                 <div className="navbar-end">
                     <div className="navbar-item">
                         <div className="buttons">
-                            <a className="button is-primary" onClick={goToSignup}>
-                                <strong>Sign up</strong>
-                            </a>
-                            <a className="button is-light" onClick={goToLogin}>
-                                Log in
-                            </a>
+
+                            {
+                                userLoggedIn
+                                    ?
+                                    <a className="button is-light" onClick={signOut}>
+                                        Log out
+                                    </a>
+                                    :
+                                    <>
+                                        <a className="button is-primary" onClick={goToSignup}>
+                                            <strong>Sign up</strong>
+                                        </a>
+                                        <a className="button is-light" onClick={goToLogin}>
+                                            Log in
+                                        </a>
+                                    </>
+                            }
                         </div>
                     </div>
                 </div>
