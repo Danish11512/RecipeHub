@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useAuth } from '../context/AuthContext'
 import { doSignInWithEmailPassword, doSignInWithGoogle } from "../firebase/auth"
 import { useNavigate } from "react-router-dom"
@@ -7,9 +7,12 @@ const Login = () => {
     const { userLoggedIn } = useAuth()
     const navigate = useNavigate()
 
-    if (userLoggedIn) {
-        navigate('home')
-    }
+    useEffect(() => {
+        if (userLoggedIn) {
+            navigate('home')
+        }
+    }, [userLoggedIn])
+    
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
