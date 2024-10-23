@@ -1,5 +1,5 @@
 import Header from './components/Header'
-import Title from './components/Title'
+import Public from './pages/Public'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Home from './pages/Home'
@@ -16,7 +16,7 @@ const App = () => {
       element: (
         <div className='app'>
           <Header />
-          <Title />
+          <Public />
         </div>
       ),
     },

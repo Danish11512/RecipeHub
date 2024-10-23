@@ -6,7 +6,7 @@ import { doCreateUserWithEmailPassword } from "../firebase/auth"
 const Signup = () => {
     const navigate = useNavigate()
 
-    const { userLoggedIn, set } = useAuth()
+    const { userLoggedIn } = useAuth()
 
     if (userLoggedIn) {
         navigate('home')
